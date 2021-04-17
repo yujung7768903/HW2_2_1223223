@@ -14,6 +14,7 @@ import android.graphics.Matrix;
 
 public class MainActivity extends AppCompatActivity {
     Button rotateButton;
+    Button initializeButton;
     ImageView rotateImage;
     int mDegree = 0;
 
@@ -22,12 +23,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         rotateButton = (Button) findViewById(R.id.rotate_button);
+        initializeButton = (Button) findViewById(R.id.initialize_button);
         rotateImage = (ImageView) findViewById(R.id.rotate_image);
 
         rotateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 rotation(mDegree + 10);
+            }
+        });
+
+        initializeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rotation(0);
             }
         });
     }
